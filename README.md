@@ -20,3 +20,25 @@ user.save!
 6. Fill the rest of the form and submit it.
 
 You're good to go!
+
+## Deployment
+
+Download and install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
+
+If you haven't already, log in to your Heroku account.
+
+```bash
+$ heroku login
+```
+
+Add the `heroku` remote:
+
+```bash
+$ heroku git:remote -a decidim-ne
+```
+
+Deploy your application to Heroku using Git:
+
+```bash
+$ git push heroku master
+```
