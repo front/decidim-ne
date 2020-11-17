@@ -1,0 +1,1273 @@
+---
+'no':
+  decidim:
+    meetings:
+      meetings:
+        show:
+          date: Date
+          back: Back to list
+          edit_meeting: Edit meeting
+        update:
+          success: You have updated the meeting successfully.
+          invalid: There was a problem updating the meeting.
+        filters:
+          origin_values:
+            official: Official
+            citizens: Citizens
+            user_groups: Groups
+            all: Alle
+          scope: Tema
+          origin: Origin
+        form:
+          address_help: "Address: used by Geocoder to find the location"
+          location_help: "Location: message directed to the users implying the spot to meet at"
+          select_a_category: Please select a category
+          create_as: Create meeting as
+        index:
+          new_meeting: New meeting
+        new:
+          back: Back
+          title: Create Your Meeting
+          create: Create
+      admin:
+        meetings:
+          destroy:
+            invalid:
+              proposals_count:
+                one: "The meeting cannot be destroyed because it has %{count} proposal associated to it"
+                other: "The meeting cannot be destroyed because it has %{count} proposals associated to it"
+        registrations:
+          form:
+            recommendation_message: For privacy reasons we recommend that you delete this inscription form when you no longer need it. By default this is 3 months after the meeting has ended.
+      models:
+        meeting:
+          fields:
+            official_meeting: Official meeting
+      actions:
+        invalid_destroy:
+          proposals_count:
+            one: "The meeting cannot be destroyed because it has %{count} proposal associated to it:"
+            other: "The meeting cannot be destroyed because it has %{count} proposals associated to it:"
+      versions:
+        back_to_resource: Go back to meeting
+    admin:
+      menu:
+        authorization_revocation:
+          destroy_ok: All matched authorizations had been revocated successfully!
+          destroy_nok: There's been a problem while revoking authorizations.
+          title: Verifications's revocation
+          info: There are a total of %{count} verified participants.
+          button: Revoke all
+          destroy:
+            confirm_all: Revoke all the authorizations can not be undone. Are you sure you want to continue?
+            confirm: Revoke before date authorizations can not be undone. Are you sure you want to continue?
+          before_date_info: Useful if the process has already begun and you want to revoke the permissions of the previous process.
+          button_before: Revoke before date
+          no_data: No verified participants
+      components:
+        index:
+          headers:
+            scope: Component scope
+      participatory_space_private_users_csv_imports:
+        new:
+          explanation: Upload your CSV file. It must have two columns with email in the first column of the file and name in the last column of the file (email, name) of the users that you want to add to the participatory space, without headers. Avoid using invalid chars like `<>?%&^*#@()[]=+:;"{}\|` in user name.
+      officializations:
+        show_email_modal:
+          close_modal: Lukk vindu
+      share_tokens:
+        destroy:
+          success: Token destroyed successfully.
+          error: There was a problem destroying the token.
+        share_tokens:
+          title: Share tokens
+          help: These tokens are used to publicly share this unpublished resource to any user. They will be hidden when the resource is published. Click on the token's share icon to visit the shareable URL.
+          empty: There are no active tokens
+        actions:
+          confirm_destroy: Are you sure you want to delete this token?
+      resources:
+        index:
+          headers:
+            scope: Tema
+      titles:
+        template_types:
+          questionnaires: Questionnaire templates
+        templates: Templates
+      templates:
+        create:
+          success: Template created successfully
+          error: There was a problem creating this template.
+        copy:
+          success: Template copied successfully
+          error: There was a problem copying this template.
+        update:
+          success: Template updated successfully
+          error: There was a problem upadting this template.
+        destroy:
+          success: Template deleted successfully
+        apply:
+          success: Template applied successfully
+          error: There was a problem applying this template.
+        empty: There are no templates yet.
+      models:
+        share_token:
+          fields:
+            token: Token
+        initiatives_votes:
+          fields:
+            scope: Tema
+      filters:
+        proposals:
+          category_id_eq:
+            label: Category
+          is_emendation_true:
+            label: Type
+            values:
+              false: Proposals
+              true: Amendments
+          scope_id_eq:
+            label: Tema
+          state_eq:
+            label: State
+            values:
+              accepted: Accepted
+              evaluating: Evaluating
+              published: Published
+              rejected: Rejected
+              validating: Technical validation
+              withdrawn: Withdrawn
+          state_null:
+            label: State
+            values:
+              true: Ikke besvart
+          valuator_role_ids_has:
+            label: Assigned to valuator
+    comments:
+      view: View
+    profiles:
+      show:
+        conversations: Conversations
+        officialized: Official participant
+    shared:
+      confirm_modal:
+        title: Bekreft
+        close_modal: Lukk vindu
+        ok: OK
+        cancel: Avbryt
+      filter_form_help:
+        help: The form below filters the search results dynamically when the search conditions are changed.
+        skip: Skip to results
+      floating_help:
+        close: Lukk hjelp
+      login_modal:
+        close_modal: Lukk vindu
+      results_per_page:
+        title: Velg antall resultater per side
+    tags:
+      filter_results_for_category: "Filter results for category: %{resource}"
+      filter_results_for_scope: "Filter results for scope: %{resource}"
+    pages:
+      terms_and_conditions:
+        form:
+          agreement: I agree with these terms
+      home:
+        statistics:
+          elections_count: Elections
+    translation_bar:
+      show_original: Show original text
+      show_translated: Show automatically-translated text
+      help_text: <strong>Warning:</strong> Content might be automatically translated and not be 100% accurate.
+    devise:
+      shared:
+        newsletter_modal:
+          buttons:
+            uncheck: Keep unchecked
+    resource_endorsements:
+      create:
+        error: There was a problem during the endorsement action.
+    messaging:
+      conversations:
+        error_modal:
+          close: Lukk vindu
+        show:
+          not_allowed: This user does not accept any more direct messages.
+    notifications_settings:
+      show:
+        direct_messages: Receive direct messages from anyone
+        allow_public_contact: Allow anyone to send me a direct message, even if I don't follow them.
+    scopes:
+      picker:
+        currently_selected: Currently selected scope
+        change: Change selected scope
+      scopes_picker_input:
+        select_scope: "Velg et tema (for tiden: %{current})"
+    user_conversations:
+      create:
+        error: The message could not be created. Try again later
+    proposals:
+      admin:
+        proposals:
+          index:
+            assign_to_valuator: Assign to valuator
+            assign_to_valuator_button: Assign
+            change_scope: Change scope
+            unassign_from_valuator: Unassign from valuator
+            publish_answers: Publish answers
+            update_scope_button: Update Scope
+            unassign_from_valuator_button: Unassign
+          update_category:
+            success: "Proposals successfully updated to the %{subject_name} category: %{proposals}."
+            invalid: "These proposals already had the %{subject_name} category: %{proposals}."
+          publish_answers:
+            number_of_proposals: Answers for %{number} proposals will be published.
+          update_scope:
+            select_a_scope: Please select a scope
+            success: "Proposals successfully updated to the %{subject_name} scope: %{proposals}."
+            invalid: "These proposals already had the %{subject_name} scope: %{proposals}."
+          show:
+            valuators: Valuators
+            assigned_valuators: Assigned valuators
+            remove_assignment: Remove assignment
+            remove_assignment_confirmation: Are you sure you want to remove the valuator from this proposal?
+        valuation_assignments:
+          create:
+            success: Proposals assigned to a valuator successfully
+            invalid: There was an error assigning proposals to a valuator
+          delete:
+            success: Valuator unassigned from proposals successfully
+            invalid: There was an error unassigning proposals from a valuator
+      proposals:
+        show:
+          withdraw_confirmation_html: Are you sure you want to withdraw this proposal?<br><br><strong>This action cannot be cancelled!</strong>
+          back_to_list: Back to list
+        tags:
+          changed_from: (changed from <u>%{previous_name}</u> by an administrator)
+        edit:
+          gallery_legend: (Optional) Add an image to the proposal card
+          delete_image: Delete Image
+          add_images: File
+          delete_document: Delete Document
+          add_documents: Documents
+        proposals:
+          empty_filters: There isn't any proposal with this criteria
+        update:
+          title: Update proposal
+        wizard_aside:
+          back_from_step_1: Back to proposals
+          back_from_step_2: Back to proposals
+          back_from_step_3: Back to compare proposals
+          back_from_step_4: Back to edit draft
+        wizard_steps:
+          current_step: Current step
+          title: Proposal creation steps
+      publish_answers:
+        success: Proposals answers successfully published.
+      models:
+        proposal:
+          fields:
+            published_answer: Published answer
+            valuators: Valuators
+            valuator: Valuator
+      actions:
+        answer_proposal: Answer proposal
+      proposals_picker:
+        choose_proposals: Choose proposals
+        more_proposals: There are %{number} more proposals. Refine your search to locate them.
+        no_proposals: No proposals match your search criteria or there isn't any proposals.
+        close: Close
+      admin_log:
+        proposal:
+          publish_answer: "%{user_name} published the answer to %{resource_name} proposal on the %{space_name} space"
+        valuation_assignment:
+          create: "%{user_name} assigned the %{resource_name} proposal to a valuator"
+          delete: "%{user_name} unassigned a valuator from the %{proposal_title} proposal"
+      collaborative_drafts:
+        update:
+          title: Edit collaborative draft
+        wizard_aside:
+          back_from_collaborative_draft: Back to collaborative drafts
+          back_from_step_1: Back to collaborative drafts
+          back_from_step_2: Back to collaborative drafts
+          back_from_step_3: Back to compare collaborative drafts
+          back_from_step_4: Back to edit draft
+        wizard_steps:
+          current_step: Current step
+          title: Collaborative draft creation steps
+    user_contact_disabled: This participant does not accept direct messages.
+    reported_mailer:
+      report:
+        date: Reported on
+        participatory_space: Participatory space
+        reason: Reason
+        details: Details
+        content: Reported content
+        authors: Authors
+    newsletter_templates:
+      basic_only_text:
+        body_preview: "Dummy text for body: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla nisl tellus. Donec sed mi dui. Sed efficitur libero a felis tempor sollicitudin. Nullam vestibulum fringilla felis, id efficitur lorem sagittis et. Vivamus aliquam maximus velit vel dapibus. Mauris pellentesque, enim eu varius lacinia, risus ante rutrum ipsum, non lobortis augue lorem quis urna. Aenean et malesuada arcu."
+        name: Basic (only text)
+      image_text_cta:
+        introduction_preview: "Dummy text for introduction: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque fringilla nisl tellus. Donec sed mi dui. Sed efficitur libero a felis tempor sollicitudin. Nullam vestibulum fringilla felis, id efficitur lorem sagittis et. Vivamus aliquam maximus velit vel dapibus. Mauris pellentesque, enim eu varius lacinia, risus ante rutrum ipsum, non lobortis augue lorem quis urna. Aenean et malesuada arcu."
+        body_preview: "Dummy text for body: Maecenas ac nisl vitae lectus pretium facilisis. Etiam facilisis sem nibh, sit amet rutrum mi aliquam nec. Sed id urna at nisl pretium mollis eu vel velit. Proin vitae suscipit urna, sed faucibus urna. Pellentesque id libero vulputate ipsum scelerisque suscipit. Nam aliquam sodales mi sit amet cursus. Donec mattis faucibus purus. Aenean tincidunt porta lorem ac commodo. Vestibulum in mollis mi. Morbi eros erat, cursus ut tortor sit amet, imperdiet dapibus arcu. Suspendisse id egestas enim. In eget magna sed enim efficitur elementum sit amet aliquam quam. Donec fermentum metus eget urna luctus pulvinar."
+        cta_text_preview: Call To Action text
+        name: Image, text and Call To Action button
+      basic_only_text_settings_form:
+        body: Body
+        interpolations_hint: "Hint: You can use \"%{name}\" anywhere in the body or subject and it will be replaced by the recipient's name."
+      image_text_cta_settings_form:
+        body: Body
+        cta_text: Call To Action button text
+        cta_url: Call To Action button URL
+        interpolations_hint: "Hint: You can use \"%{name}\" anywhere in the introduction, body, CTA text or subject and it will be replaced by the recipient's name."
+        introduction: Introduction
+        main_image: Main image
+    forms:
+      admin:
+        questionnaires:
+          update:
+            success: Form successfully saved.
+          display_condition:
+            display_condition: Display condition
+            remove: Remove
+            save_warning: Remember to save the form before configuring display conditions
+            select_condition_question: Select a question
+            condition_question: Question
+            select_condition_type: Select a condition type
+            condition_type: Condition
+            select_answer_option: Select answer option
+            answer_option: Answer option
+            condition_value: Included text
+            mandatory: This condition needs to be satisfied always regardless the status of other conditions
+            condition_types:
+              answered: Besvart
+              equal: Equal
+              match: Includes text
+              not_answered: Ikke besvart
+              not_equal: Not equal
+          form:
+            title: Edit form
+            preview: Preview
+            collapse: Collapse all questions
+            expand: Expand all questions
+            unpublished_warning: The form is not published. You may modify its questions, but doing so will delete current answers.
+            add_separator: Add separator
+          matrix_row:
+            matrix_row: Row
+          question:
+            add_display_condition: Add display condition
+          edit:
+            title: Edit questionnaire
+      images:
+        processors:
+          resize_and_pad: Resized and padded to
+          resize_to_fit: Resized to fit
+      question_types:
+        matrix_multiple: Matrix (Multiple option)
+        matrix_single: Matrix (Single option)
+    sortitions:
+      sortitions:
+        show:
+          back: Back to list
+    templates:
+      admin:
+        questionnaire_templates:
+          form:
+            title: Questionnaire
+            template_title: Template information
+            save: Save
+          choose:
+            placeholder: Choose template
+            label: Choose template
+            skip_template: Skip
+            description: You are about to create a new questionnaire. You may choose a predefined template and modify it afterwards.
+            create_from_template: Create from template
+          preview:
+            current_step: Step %{step}
+            of_total_steps: of %{total_steps}
+            tos_agreement: By participating you accept its Terms of Service
+          edit:
+            questionnaire: Questionnaire
+            edit: Edit
+            empty: There are no questions yet
+          index:
+            title: Questionnaire templates
+            confirm_delete: Are you sure you want to delete this template?
+      template_types:
+        questionnaires: Questionnaires
+    debates:
+      debates:
+        filters:
+          user_groups: Groups
+          my_debates: My debates
+          commented: Commented
+          state_values:
+            open: Open
+            closed: Closed
+          state: Status
+          scope: Tema
+          activity: My activity
+        show:
+          last_comment_by: Last comment by
+          no_comments_yet: No comments yet
+          participants_count: Participants
+          groups_count: Groups
+        orders:
+          commented: Sist kommentert
+          label: Order debates by
+          random: Tilfeldig
+          recent: Nyeste
+          updated: Nylig oppdatert
+      debate_m:
+        commented_time_ago: Commented %{time} ago
+    conferences:
+      registration_types:
+        index:
+          no_registrations: No registrations
+    system:
+      oauth_applications:
+        create:
+          success: Application created successfully.
+          error: There was a problem creating this application.
+        update:
+          success: Application updated successfully.
+          error: There was a problem updating this application.
+        destroy:
+          success: Application destroyed successfully.
+          error: There was a problem destroying this application.
+        form:
+          select_organization: Select an organization
+        edit:
+          title: Edit application
+          save: Save
+        index:
+          title: OAuth applications
+          confirm_delete: Are you sure you want to delete this application?
+        new:
+          title: New application
+          save: Save
+      organizations:
+        file_upload_settings:
+          intro: "Please be extra cautious when considering to change these settings. The less you allow, the better.
+Allowing specific file extensions or MIME types can expose the system users to security risks and it can also affect the accessibility of the website."
+          file_extensions:
+            title: Allowed file extensions
+            default_hint: These file extensions are allowed for all users by default.
+            image_hint: These file extensions are allowed for any kind of image uploads.
+            admin_hint: These file extensions are allowed for the admin section uploads. Admin users should be aware of the risks with uploading some document formats, so you can expect them to be more cautious with the file uploads.
+          content_types:
+            title: Allowed MIME types
+            intro_html: You add wildcards with the asterisk character for the MIME types, e.g. <code>image/*</code>.
+            default_hint: These MIME types are allowed for all users by default.
+            admin_hint: These MIME types are allowed for the admin section uploads. Admin users should be aware of the risks with uploading some document formats, so you can expect them to be more cautious with the file uploads.
+          file_sizes:
+            title: Maximum file sizes
+            default_hint: Megabytes (MB). This file size limit is the default which is used for all file uploads unless otherwise specified.
+            avatar_hint: Megabytes (MB). This file size limit is used for the avatar image uploads.
+        smtp_settings:
+          placeholder:
+            from_email: your-organization@example.org
+            from_label: your-organization-name
+          instructions:
+            from_label: "Email sender will be: \"your-organization-name <your-organization@example.org>\". Leave blank to use the 'from_email' as label"
+        omniauth_settings:
+          decidim:
+            client_id: Client ID
+            client_secret: Client secret
+            site_url: Site URL
+          enabled_by_default: This provider is enabled by default. It can be edited but not disabled.
+      models:
+        oauth_application:
+          name: OAuth application
+          fields:
+            name: OAuth application name
+            organization_name: Organization
+            created_at: Created at
+        organization:
+          fields:
+            file_upload_settings: File upload settings
+      menu:
+        oauth_applications: OAuth applications
+    budgets:
+      projects:
+        project:
+          selected: Selected
+          you_voted: You voted
+          votes:
+            one: vote
+            other: votes
+        filters:
+          status_values:
+            all: Alle
+            selected: Selected
+            not_selected: Not selected
+          status: Status
+        budget_confirm:
+          are_you_sure: If you change your mind, you can change your vote later.
+        projects_for: Projects for %{name}
+        orders:
+          selected: Selected
+      admin:
+        budgets:
+          create:
+            success: Budget successfully created
+          update:
+            success: Budget successfully updated
+            invalid: There was a problem updating this budget
+          destroy:
+            success: Budget successfully deleted
+            invalid: There was a problem deleting this budget
+          edit:
+            title: Edit budget
+            update: Update budget
+          index:
+            title: Budgets
+          new:
+            title: New budget
+            create: Create budget
+        projects:
+          index:
+            selected: Selected
+        models:
+          budget:
+            name: Budget
+      order_summary_mailer:
+        order_summary:
+          voted_on_space_with_scope: You have voted on the %{budget_name} budget for the %{space_name} participatory space on %{scope_name} (%{scope_type}).
+          voted_on_space: You have voted on the %{budget_name} budget for the %{space_name} participatory space.
+      budget:
+        view: View all budget projects
+      models:
+        budget:
+          fields:
+            name: Name
+            total_budget: Total budget
+            projects_count: Projects count
+      admin_log:
+        budget:
+          create: "%{user_name} created the %{resource_name} budget in the %{space_name} space"
+          delete: "%{user_name} deleted the %{resource_name} budget in the %{space_name} space"
+          update: "%{user_name} updated the %{resource_name} budget in the %{space_name} space"
+      budget_information_modal:
+        back_to: Back to %{component_name}
+        close_modal: Lukk vindu
+        continue: Continue
+        more_information: More information
+      budgets_list:
+        cancel_order:
+          more_than_one: delete your vote on %{name} and start over
+          only_one: delete your vote and start over.
+        finished_message: You've finished the voting process. Thanks for participating!
+        highlighted_cta: Vote on %{name}
+        if_change_opinion: If you've changed your mind, you can
+        my_budgets: My budgets
+        voted_on: You've voted on %{links}
+      limit_announcement:
+        cant_vote: You can't vote on this budget. <a href="%{landing_path}">Try on another budget</a>.
+        limit_reached: You have active votes in %{links}. To vote on this budget you must <a href="%{landing_path}">delete your vote and start over</a>.
+    questions:
+      vote_modal:
+        close_modal: Lukk vindu
+      vote_modal_confirm:
+        close_modal: Lukk vindu
+    verifications:
+      authorizations:
+        destroy:
+          success: You've successfully deleted the authorization.
+          error: There was a problem deleting the authorization.
+        authorization_metadata:
+          info: "This is the data of the current verification:"
+          no_data_stored: No data stored.
+        index:
+          expired_verification: Verification expired
+          show_renew_info: Click to renew verification
+          pending_verification: Pending verification
+          unauthorized_verification: New verification
+        renew_modal:
+          title: Renew Verification
+          close: close
+          info_renew: If you want to update the data, continue with the renewal
+          continue: Continue
+        first_login:
+          actions:
+            sms: Get verified by receiving a SMS verification code
+      dummy_authorization:
+        extra_explanation:
+          scope: Participation is restricted to participants with the scope %{scope_name}.
+    elections:
+      election_m:
+        questions: Questions %{count}
+        footer:
+          vote: Vote
+          view: View
+        label:
+          date: Dates
+        start_date: Starts
+        unspecified: Not specified
+        end_date: Ends
+        badge_name:
+          finished: Finished
+          ongoing: Active
+          upcoming: Upcoming
+      votes:
+        confirm:
+          nota_option: Blank
+        new:
+          answer_choices: You can select up to %{choices} answers
+          nota_option: Blank/ None of the above
+      admin:
+        answers:
+          index:
+            invalid_max_selections: You need %{missing_answers} more answer/s to match max selections
+            title: Answers
+          create:
+            success: Answer successfully created
+            invalid: There was a problem creating this answer
+          update:
+            success: Answer successfully updated
+            invalid: There was a problem updating this answer
+          destroy:
+            success: Answer successfully deleted
+            invalid: There was a problem deleting this answer
+          edit:
+            title: Edit answer
+            update: Update answer
+          new:
+            title: New answer
+            create: Create answer
+        elections:
+          index:
+            no_bulletin_board: There is no <a href="https://github.com/decidim/decidim-bulletin-board">Bulletin Board server</a> configured, which is needed to use this module. This task should be done by the System Administrator.
+            title: Elections
+          create:
+            success: Election successfully created
+            invalid: There was a problem creating this election
+          update:
+            success: Election successfully updated
+            invalid: There was a problem updating this election
+          destroy:
+            success: Election successfully deleted
+            invalid: There was a problem deleting this election
+          publish:
+            success: The election has been successfully published.
+          unpublish:
+            success: The election has been successfully unpublished.
+          edit:
+            title: Edit election
+            update: Update election
+          new:
+            title: New election
+            create: Create election
+        proposals_imports:
+          create:
+            success: "%{number} proposals successfully imported into answers"
+          new:
+            select_component: Please select a component
+            create: Import proposals to answers
+            no_components: There are no other proposal components in this participatory space to import the proposals into answers.
+        questions:
+          create:
+            success: Question successfully created
+            invalid: There was a problem creating this question
+          update:
+            success: Question successfully updated
+            invalid: There was a problem updating this question
+          destroy:
+            success: Question successfully deleted
+            invalid: There was a problem deleting this question
+          edit:
+            title: Edit question
+            update: Update question
+          index:
+            title: Questions
+          new:
+            title: New question
+            create: Create question
+        models:
+          answer:
+            name: Answer
+          election:
+            name: Election
+          question:
+            name: Question
+      elections:
+        filters:
+          all: Alle
+          active: Active
+          upcoming: Upcoming
+          finished: Finished
+          search: Search
+          state: Status
+        filters_small_view:
+          filter: Filter
+          unfold: Unfold
+          filter_by: Filter by
+          close_modal: Lukk vindu
+      actions:
+        new: New %{name}
+        title: Actions
+        edit: Edit
+        destroy: Destroy
+        confirm_destroy: Are you sure?
+        preview: Preview
+        unpublish: Unpublish
+        publish: Publish
+      models:
+        answer:
+          fields:
+            title: Title
+            proposals: Proposals
+        election:
+          fields:
+            title: Title
+            start_time: Starts at
+            end_time: End at
+        question:
+          fields:
+            title: Title
+            answers: Answers
+            max_selections: Max. selections
+      warnings:
+        no_elections_warning: No elections match your search criteria or there isn't any election scheduled.
+        no_scheduled_elections_warning: Currently, there are no scheduled elections, but here you can find all the past elections listed.
+      admin_log:
+        election:
+          publish: "%{user_name} published the %{resource_name} election"
+          unpublish: "%{user_name} unpublished the %{resource_name} election"
+      orders:
+        label: Order elections by
+        older: Older
+        recent: Recent
+    participatory_processes:
+      show:
+        dates: Dates
+      participatory_process_steps:
+        index:
+          back_to_process: Back to the process page
+      statistics:
+        elections_count: Elections
+      admin:
+        new_import:
+          accepted_types:
+            json: JSON
+      pages:
+        home:
+          highlighted_processes:
+            participate_in: Participate in process %{resource_name}
+    initiatives:
+      admin:
+        initiatives:
+          form:
+            settings: Settings
+          initiative_attachments:
+            documents: Documents
+            photos: Photos
+            edit: Edit
+            new: New
+        initiatives_types:
+          form:
+            options: Options
+            child_scope_threshold_enabled_help: "This config flag doesn't support offline votes, it enables sub-jauges and works with an authorization handler that associates a scope to the user, make sure you select that authorization, bellow in authorization settings. For it to work scopes need to be configured in hierarchical way : 1 Parent - N Child. For more info on how this configuration works, see this <a href=\"https://docs.decidim.org/admin-manual/en/initiatives/\" target=\"_blank\">link</a>."
+            only_global_scope_enabled_help: Tick this flag if you enabled "Child scope signature" and configured the global scope as your parent scope. By enabling this, initiative type selection will be skipped in the initiative creation wizard. For more info on how this configuration works, see this <a href="https://docs.decidim.org/admin-manual/en/initiatives/" target="_blank">link</a>.
+            authorizations: Authorization settings
+      show:
+        badge_name:
+          accepted: Nok signaturer
+          created: Created
+          discarded: Discarded
+          published: Published
+          rejected: Ikke nok signaturer
+          validating: Technical validation
+      application_helper:
+        filter_state_values:
+          all: Alle
+          accepted: Nok signaturer
+          rejected: Ikke nok signaturer
+          answered: Besvart
+        filter_scope_values:
+          all: Alle
+        filter_type_values:
+          all: Alle
+        filter_area_values:
+          all: Alle
+      initiatives:
+        filters:
+          scope: Tema
+          area: Area
+        initiatives:
+          closed_initiatives_warning: Currently, there are no open initiatives, but here you can find all the closed initiatives listed.
+          no_initiatives_warning: Ingen initiativer tilgjengelige.
+        orders:
+          recently_published: Sist publisert
+      create_initiative:
+        fill_data:
+          select_area: Select an area
+        finish:
+          send_my_initiative: Send my initiative
+          confirm: Bekreft
+          edit_my_initiative: Edit my initiatives
+      admin_states:
+        accepted: Nok signaturer
+        rejected: Ikke nok signaturer
+      versions:
+        shared:
+          back_to_resource: Go back to initiative
+    security:
+      selfxss_warning:
+        title: Stopp!
+        description: Denne funksjonaliteten i nettleseren er ment for utviklere. Du må ikke lime inn noe her, selv om du blir bedt om det. Dersom du limer inn noe her, kan personvernet brytes, og gi hackere tilgang til kontoen din.
+    models:
+      template:
+        name: Template
+        fields:
+          created_at: Created at
+      questionnaire_template:
+        fields:
+          title: Questionnaire Title
+          questions: Number of questions
+    components:
+      meetings:
+        settings:
+          global:
+            comments_max_length: Comments max length (Leave 0 for default value)
+            scope_id: Scope
+            scopes_enabled: Scopes enabled
+      dummy:
+        settings:
+          global:
+            scope_id: Scope
+            scopes_enabled: Scopes enabled
+            readonly_attribute: Readonly attribute
+            test: A test
+            test_choices:
+              a: A choice
+              b: B choice
+              c: C choice
+          step:
+            endorsements_blocked: Endorsements blocked
+            endorsements_enabled: Endorsements enabled
+            readonly_step_attribute: Readonly step attribute
+      sortitions:
+        settings:
+          global:
+            comments_max_length: Comments max length (Leave 0 for default value)
+      accountability:
+        settings:
+          global:
+            scope_id: Scope
+            scopes_enabled: Scopes enabled
+      debates:
+        actions:
+          endorse: Endorse
+        settings:
+          global:
+            scope_id: Scope
+            scopes_enabled: Scopes enabled
+          step:
+            endorsements_blocked: Endorsements blocked
+            endorsements_enabled: Endorsements enabled
+      budgets:
+        settings:
+          global:
+            landing_page_content: Budgets landing page
+            more_information_modal: More information modal
+            scope_id: Scope
+            scopes_enabled: Scopes enabled
+            title: Title
+            workflow: Workflow
+            workflow_choices:
+              all: "Vote in all: allows participants to vote in all budgets."
+              one: "Vote in one: allows participants to vote in any budget, but only in one."
+          step:
+            highlighted_heading: Highlighted heading
+            landing_page_content: Budgets landing page
+            list_heading: List heading
+            more_information_modal: More information modal
+            title: Title
+            votes: Voting
+            votes_choices:
+              disabled: Voting disabled
+              finished: Voting finished
+      surveys:
+        settings:
+          global:
+            clean_after_publish: Delete answers when publishing the survey
+            scope_id: Scope
+            scopes_enabled: Scopes enabled
+      elections:
+        actions:
+          vote: Vote
+        name: Elections
+        settings:
+          global:
+            announcement: Announcement
+          step:
+            announcement: Announcement
+      proposals:
+        settings:
+          global:
+            comments_max_length: Comments max length (Leave 0 for default value)
+            scope_id: Scope
+            scopes_enabled: Scopes enabled
+          step:
+            amendments_visibility_choices:
+              all: Amendments are visible to all
+              participants: Amendments are visible only to their authors
+            publish_answers_immediately: Publish proposal answers immediately
+    events:
+      budgets:
+        budget_published:
+          email_intro: "The %{resource_title} budget is now active for %{participatory_space_title}. You can see it from this page:"
+          email_outro: You have received this notification because you are following %{participatory_space_title}. You can stop receiving notifications following the previous link.
+          email_subject: The %{resource_title} budget is now active for %{participatory_space_title}.
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> budget is now active for %{participatory_space_title}.
+      elections:
+        election_published:
+          email_intro: "The %{resource_title} election is now active for %{participatory_space_title}. You can see it from this page:"
+          email_outro: You have received this notification because you are following %{participatory_space_title}. You can stop receiving notifications following the previous link.
+          email_subject: The %{resource_title} election is now active for %{participatory_space_title}.
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> election is now active for %{participatory_space_title}.
+      proposals:
+        admin:
+          proposal_note_created:
+            email_intro: Someone has left a note on the proposal "%{resource_title}". Check it out at <a href="%{admin_proposal_info_url}">the admin panel</a>
+            email_outro: You have received this notification because you can valuate the proposal.
+            email_subject: Someone left a note on proposal %{resource_title}.
+            notification_title: Someone has left a note on the proposal <a href="%{resource_path}">%{resource_title}</a>. Check it out at <a href="%{admin_proposal_info_path}">the admin panel</a>
+        proposal_mentioned:
+          email_intro: Your proposal "%{mentioned_proposal_title}" has been mentioned <a href="%{resource_url}">in this space</a> in the comments.
+        proposal_update_scope:
+          email_intro: "An admin has updated the scope of your proposal \"%{resource_title}\", check it out in this page:"
+          email_subject: The %{resource_title} proposal scope has been updated
+          notification_title: The <a href="%{resource_path}">%{resource_title}</a> proposal scope has been updated by an admin.
+    search:
+      results: Search results
+    assemblies:
+      admin:
+        new_import:
+          accepted_types:
+            json: JSON
+  activemodel:
+    attributes:
+      initiative:
+        offline_votes_for_scope: In-person signatures for %{scope_name}
+      answer:
+        choices: Choices
+        selected_choices: Selected choices
+        image: Image
+        proposals: Related proposals
+      question:
+        max_selections: Maximum number of selections
+        min_selections: None of the above option
+      debate:
+        closed_at: Closed at
+        conclusions: Conclusions
+      oauth_application:
+        name: OAuth Application Name
+        organization_logo: Organization logo (square)
+        organization_name: Organization
+        organization_url: Organization URL
+        redirect_uri: Redirect URI
+      organization_file_uploads:
+        allowed_content_types:
+          admin: Admin MIME types
+          default: Default MIME types
+        allowed_file_extensions:
+          admin: Admin file extensions
+          default: Default file extensions
+          image: Image file extensions
+        maximum_file_size:
+          avatar: Avatar file size
+          default: Default file size
+      budget:
+        decidim_scope_id: Scope
+        weight: Weight
+      project:
+        selected: Selected for implementation
+      election:
+        end_time: Voting ends at
+        start_time: Voting start at
+        title: Title
+      collaborative_draft:
+        scope_id: Scope
+      proposal:
+        scope_id: Scope
+      valuation_assignment:
+        admin_log:
+          valuator_role_id: Valuator name
+      dummy_resource:
+        decidim_scope_id: Scope
+      initiatives_type:
+        child_scope_threshold_enabled: Enable child scope signatures
+        only_global_scope_enabled: Only allow global scope initiatives creation
+    errors:
+      models:
+        answer:
+          attributes:
+            attachment:
+              needs_to_be_reattached: Needs to be reattached
+        oauth_application:
+          attributes:
+            redirect_uri:
+              must_be_ssl: The redirect URI must be a SSL URI
+        election:
+          attributes:
+            attachment:
+              needs_to_be_reattached: Needs to be reattached
+    models:
+      decidim/proposals/admin/update_proposal_scope_event: Proposal scope changed
+  locale:
+    name: Norsk
+    name_with_error: Norwegian (error!)
+  carrierwave:
+    errors:
+      not_inside_organization: The file is not attached to any organization
+  views:
+    pagination:
+      first_title: Link to the first page
+      last_title: Link to the last page
+      next_title: Link to the next page
+      title: "Page number:"
+      pagination: Pagination
+      previous_title: Link to the previous page
+  activerecord:
+    models:
+      decidim/elections/answer:
+        one: Answer
+        other: Answers
+      decidim/elections/election:
+        one: Election
+        other: Elections
+      decidim/elections/question:
+        one: Question
+        other: Questions
+  layouts:
+    decidim:
+      participatory_process_groups:
+        participatory_process_group:
+          browse_resource: Browse process group %{resource_name}
+      participatory_processes:
+        participatory_process:
+          more_info_about: More info about process %{resource_name}
+          take_part_in: Delta i prosess %{resource_name}
+        promoted_process:
+          more_info_about: More info about process %{resource_name}
+          take_part_in: Delta i prosess %{resource_name}
+  activerecord:
+    errors:
+      messages:
+        record_invalid: 'Det oppstod feil: %{errors}'
+        restrict_dependent_destroy:
+          has_one: Kan ikke slette registreringen, fordi 1 %{record} avhenger av denne.
+          has_many: Kan ikke slette registreringen, fordi %{record} avhenger av denne.
+  date:
+    abbr_day_names:
+    - søn
+    - man
+    - tir
+    - ons
+    - tor
+    - fre
+    - lør
+    abbr_month_names:
+    -
+    - jan
+    - feb
+    - mar
+    - apr
+    - mai
+    - jun
+    - jul
+    - aug
+    - sep
+    - okt
+    - nov
+    - des
+    day_names:
+    - søndag
+    - mandag
+    - tirsdag
+    - onsdag
+    - torsdag
+    - fredag
+    - lørdag
+    formats:
+      default: "%d.%m.%Y"
+      long: "%e. %B %Y"
+      short: "%e. %b"
+      decidim_short: "%d.%m.%Y"
+    month_names:
+    -
+    - januar
+    - februar
+    - mars
+    - april
+    - mai
+    - juni
+    - juli
+    - august
+    - september
+    - oktober
+    - november
+    - desember
+    order:
+    - :day
+    - :month
+    - :year
+  datetime:
+    distance_in_words:
+      about_x_hours:
+        one: rundt 1 time
+        other: rundt %{count} timer
+      about_x_months:
+        one: rundt 1 måned
+        other: rundt %{count} måneder
+      about_x_years:
+        one: rundt 1 år
+        other: rundt %{count} år
+      almost_x_years:
+        one: nesten 1 år
+        other: nesten %{count} år
+      half_a_minute: et halvt minutt
+      less_than_x_seconds:
+        one: mindre enn 1 sekund
+        other: mindre enn %{count} sekunder
+      less_than_x_minutes:
+        one: mindre enn 1 minutt
+        other: mindre enn %{count} minutter
+      over_x_years:
+        one: over 1 år
+        other: over %{count} år
+      x_seconds:
+        one: 1 sekund
+        other: "%{count} sekunder"
+      x_minutes:
+        one: 1 minutt
+        other: "%{count} minutter"
+      x_days:
+        one: 1 dag
+        other: "%{count} dager"
+      x_months:
+        one: 1 måned
+        other: "%{count} måneder"
+      x_years:
+        one: 1 år
+        other: "%{count} år"
+    prompts:
+      second: sekund
+      minute: minutt
+      hour: time
+      day: dag
+      month: måned
+      year: år
+  errors:
+    format: "%{attribute} %{message}"
+    messages:
+      accepted: må være akseptert
+      blank: kan ikke være tom
+      confirmation: er ikke lik %{attribute}
+      empty: kan ikke være tom
+      equal_to: må være lik %{count}
+      even: må være partall
+      exclusion: er reservert
+      greater_than: må være større enn %{count}
+      greater_than_or_equal_to: må være større enn eller lik %{count}
+      inclusion: er ikke inkludert i listen
+      invalid: er ugyldig
+      less_than: må være mindre enn %{count}
+      less_than_or_equal_to: må være mindre enn eller lik %{count}
+      model_invalid: 'Det oppstod feil: %{errors}'
+      not_a_number: er ikke et tall
+      not_an_integer: er ikke et heltall
+      odd: må være oddetall
+      other_than: kan ikke være nøyaktig %{count}
+      present: må være tom
+      required: må eksistere
+      taken: er allerede i bruk
+      too_long:
+        one: er for lang (maksimalt 1 tegn)
+        other: er for lang (maksimalt %{count} tegn)
+      too_short:
+        one: er for kort (minst 1 tegn)
+        other: er for kort (minst %{count} tegn)
+      wrong_length:
+        one: har feil lengde (må være 1 tegn)
+        other: har feil lengde (må være %{count} tegn)
+    template:
+      body: 'Det oppstod problemer med følgende felt:'
+      header:
+        one: Kunne ikke lagre %{model} på grunn av én feil.
+        other: Kunne ikke lagre %{model} på grunn av %{count} feil.
+  helpers:
+    select:
+      prompt: Vennligst velg
+    submit:
+      create: Lag %{model}
+      submit: Lagre %{model}
+      update: Oppdater %{model}
+  number:
+    currency:
+      format:
+        delimiter: " "
+        format: "%n %u"
+        precision: 2
+        separator: ","
+        significant: false
+        strip_insignificant_zeros: false
+        unit: kr
+    format:
+      delimiter: " "
+      precision: 2
+      separator: ","
+      significant: false
+      strip_insignificant_zeros: true
+    human:
+      decimal_units:
+        format: "%n %u"
+        units:
+          billion:
+            one: milliard
+            other: milliarder
+          million:
+            one: million
+            other: millioner
+          quadrillion:
+            one: billiard
+            other: billiarder
+          thousand: tusen
+          trillion:
+            one: billion
+            other: billioner
+          unit: ''
+      format:
+        delimiter: " "
+        precision: 1
+        significant: false
+        strip_insignificant_zeros: true
+      storage_units:
+        format: "%n %u"
+        units:
+          byte:
+            one: Byte
+            other: Bytes
+          gb: GB
+          kb: kB
+          mb: MB
+          tb: TB
+    percentage:
+      format:
+        delimiter: ''
+        format: "%n%"
+    precision:
+      format:
+        delimiter: ''
+  support:
+    array:
+      last_word_connector: " og "
+      two_words_connector: " og "
+      words_connector: ", "
+  time:
+    am: ''
+    formats:
+      default: "%A, %e. %B %Y, %H:%M"
+      long: "%A, %e. %B %Y, %H:%M"
+      short: "%e. %B, %H:%M"
+    pm: ''
