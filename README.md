@@ -40,5 +40,12 @@ $ heroku git:remote -a decidim-ne
 Deploy your application to Heroku using Git:
 
 ```bash
-$ git push heroku master
+$ git push heroku main
+```
+
+Make sure you get all the latest migrations:
+
+``bash
+heroku run bin/rails decidim:upgrade
+heroku run bin/rails db:migrate
 ```
