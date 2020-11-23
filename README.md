@@ -46,6 +46,5 @@ $ git push heroku main
 Make sure you get all the latest migrations:
 
 ``bash
-heroku run bin/rails decidim:upgrade
 heroku run bin/rails db:migrate
 ```
