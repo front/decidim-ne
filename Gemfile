@@ -15,7 +15,6 @@ gem "decidim-initiatives", DECIDIM_VERSION
 gem "decidim-pages", DECIDIM_VERSION
 gem "decidim-proposals", DECIDIM_VERSION
 # gem "decidim-templates", DECIDIM_VERSION
-gem 'decidim-verifications', DECIDIM_VERSION
 
 gem "bootsnap", "~> 1.3"
 
