@@ -3,7 +3,6 @@
 CarrierWave.configure do |config|
   if Rails.env.production?
     # Setup CarrierWave to use Amazon S3. Add `gem "fog-aws" to your Gemfile.
-    config.storage = :fog
     config.fog_provider = 'fog/aws' # required
     config.fog_credentials = {
       provider: 'AWS', # required
@@ -13,6 +12,7 @@ CarrierWave.configure do |config|
       # host: 's3.example.com', # optional, defaults to nil
       # endpoint: 'https://s3.example.com:8080' # optional, defaults to nil
     }
+    config.storage = :fog
     config.fog_directory  = Rails.application.secrets.s3_bucket # required
     # config.fog_public     = false # optional, defaults to true
     config.fog_attributes = {
