@@ -25,6 +25,9 @@ gem "faker", "~> 1.9"
 
 gem "wicked_pdf", "~> 1.4"
 
+gem "fog-aws"
+gem "aws-sdk"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
@@ -37,8 +40,4 @@ group :development do
   gem "spring", "~> 2.0"
   gem "spring-watcher-listen", "~> 2.0"
   gem "web-console", "~> 3.5"
-end
-
-group :production do
-  gem "fog-aws"
 end
