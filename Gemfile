@@ -16,6 +16,11 @@ gem "decidim-pages", DECIDIM_VERSION
 gem "decidim-proposals", DECIDIM_VERSION
 # gem "decidim-templates", DECIDIM_VERSION
 
+# Module that provides a new verification method that allows system
+# administrators to define new verification workflows where the admins
+# can provide access to specific users.
+gem "decidim-access_requests", git: "https://github.com/front/decidim-module-access_requests"
+
 gem "bootsnap", "~> 1.3"
 
 gem "puma", ">= 4.3.5"
