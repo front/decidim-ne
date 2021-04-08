@@ -102,9 +102,11 @@ Rails.application.configure do
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 
-  # config.middleware.use ExceptionNotification::Rack,
-  #                       slack: {
-  #                         webhook_url: 'https://hooks.slack.com/services/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',
-  #                         channel: '#proj-nordicedge-decidim-status'
-  #                       }
+  if ENV['SLACK_WEBHOOK_URL'].present? && ENV['SLACK_CHANNEL'].present?
+    config.middleware.use ExceptionNotification::Rack,
+                          slack: {
+                            webhook_url: ENV['SLACK_WEBHOOK_URL'],
+                            channel: ENV['SLACK_CHANNEL']
+                          }
+  end
 end
