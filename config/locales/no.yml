@@ -75,10 +75,34 @@
           before_date_info: Useful if the process has already begun and you want to revoke the permissions of the previous process.
           button_before: Revoke before date
           no_data: No verified participants
+        moderation: Globale moderasjoner
       components:
         index:
           headers:
             scope: Component scope
+      moderations:
+        index:
+          title: Moderasjoner
+        report:
+          reasons:
+            does_not_belong: Tilhører ikke
+            offensive: Støtende
+            spam: Spam
+        reports:
+          index:
+            author: Forfatter(e)
+            callout_html: Et innhold vises i moderasjonspanelet når det har blitt signalisert av en bruker (kan være hvem som helst med en registrert konto) ved å klikke på% {icon} flagget ved siden av elementet.
+            content_original_language: Innhold originalspråk
+            participatory_space: Deltakerom
+            reported_content: Rapportert innhold
+            see_current: Se gjeldende
+            see_original: Se original
+            title: Moderasjonsrapporter
+          show:
+            report_details: Årsak detaljer
+            report_language: Rapporter språk
+            report_reason: Årsaken
+            title: Rapporter detaljer
       participatory_space_private_users_csv_imports:
         new:
           explanation: Upload your CSV file. It must have two columns with email in the first column of the file and name in the last column of the file (email, name) of the users that you want to add to the participatory space, without headers. Avoid using invalid chars like `<>?%&^*#@()[]=+:;"{}\|` in user name.
@@ -100,6 +124,7 @@
           headers:
             scope: Tema
       titles:
+        panel: Panel
         template_types:
           questionnaires: Questionnaire templates
         templates: Templates
@@ -127,6 +152,9 @@
           fields:
             scope: Tema
       filters:
+        moderations:
+          reportable_type_string_eq:
+            label: Type
         proposals:
           category_id_eq:
             label: Category
@@ -152,12 +180,17 @@
               true: Ikke besvart
           valuator_role_ids_has:
             label: Assigned to valuator
+        search_placeholder:
+          name_or_nickname_or_email_cont: Søk %{collection} etter e-post, navn eller kallenavn.
+          reported_id_string_or_reported_content_cont: Søk %{collection} etter ID eller innhold.
+          title_cont: Søk %{collection} etter tittel.
     comments:
       view: View
     profiles:
       show:
         conversations: Conversations
         officialized: Official participant
+        send_private_message: Send privat melding
     shared:
       confirm_modal:
         title: Bekreft
@@ -201,6 +234,32 @@
           close: Lukk vindu
         show:
           not_allowed: This user does not accept any more direct messages.
+    moderations:
+      actions:
+        expand: Utvide
+        hidden: Skjult
+        hide: Gjemme seg
+        not_hidden: kke skjult
+        title: Handlinger
+        unhide: Skjul
+        unreport: Ikke rapportere
+      models:
+        moderation:
+          fields:
+            created_at: Dato opprettet
+            hidden_at: Gjemt under
+            participatory_space: Deltaker-område
+            report_count: Antall
+            reportable_id: ID
+            reportable_type: Type
+            reported_content_url: Rapportert innholds-URL
+            reports: Rapporter
+            visit_url: Besøks-URL
+        report:
+          fields:
+            details: Årsak detaljer
+            locale: Språk
+            reason: Årsaken
     notifications_settings:
       show:
         direct_messages: Receive direct messages from anyone
@@ -749,6 +808,14 @@ Allowing specific file extensions or MIME types can expose the system users to s
         label: Order elections by
         older: Older
         recent: Recent
+      trustee_zone:
+        trustees:
+          show:
+            identification_keys:
+              upload_error:
+                invalid_format: The uploaded file doesn't contain any identification key.
+                invalid_key: The identification keys in the uploaded file can't be loaded.
+                invalid_public_key: The identification keys in the uploaded file doesn't match the public identification key stored by Decidim.
     participatory_processes:
       show:
         dates: Dates
@@ -1052,11 +1119,19 @@ Allowing specific file extensions or MIME types can expose the system users to s
       decidim/elections/question:
         one: Question
         other: Questions
+  forms:
+    length_validator:
+      minimum:
+        one: Minst %{count} tegn
+        other: Minst %{count} tegn
   layouts:
     decidim:
+      admin:
+        global_moderations:
+          title: Globale moderasjoner
       participatory_process_groups:
         participatory_process_group:
-          browse_resource: Browse process group %{resource_name}
+          browse_resource: Browse process groups %{resource_name}
       participatory_processes:
         participatory_process:
           more_info_about: More info about process %{resource_name}
@@ -1064,3 +1139,11 @@ Allowing specific file extensions or MIME types can expose the system users to s
         promoted_process:
           more_info_about: More info about process %{resource_name}
           take_part_in: Delta i prosess %{resource_name}
+      timeout_modal:
+        body: Du har vært inaktiv i %{minutes} minutter. Dersom du forblir inaktiv, blir du automatisk logget ut for din egen sikkerhet.
+        continue_session: Fortsett sesjon
+        sign_out: Logg ut
+        title: Ønsker du å fortsette sesjonen din?
+  time:
+    formats:
+      long_dashed: "%A, %e. %B %Y, %H:%M"
