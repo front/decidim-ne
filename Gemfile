@@ -4,7 +4,7 @@ source "https://rubygems.org"
 
 ruby RUBY_VERSION
 
-DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/0.24-stable" } # "0.23.1"
+DECIDIM_VERSION = { git: "https://github.com/decidim/decidim", branch: "release/0.24-stable" }
 
 gem "decidim", DECIDIM_VERSION
 
@@ -21,12 +21,12 @@ gem "decidim-proposals", DECIDIM_VERSION
 # can provide access to specific users.
 gem "decidim-access_requests", git: "https://github.com/front/decidim-module-access_requests"
 
-gem "bootsnap", "~> 1.7"
+gem "bootsnap", "~> 1.4"
 
 gem "puma", ">= 5.0"
 gem "uglifier", "~> 4.1"
 
-gem "faker", "~> 1.9"
+gem "faker", "~> 2.14"
 
 gem "wicked_pdf", "~> 1.4"
 
