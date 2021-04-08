@@ -33,6 +33,13 @@ gem "wicked_pdf", "~> 1.4"
 gem "fog-aws"
 gem "aws-sdk"
 
+# The Exception Notification gem provides a set of notifiers for sending
+# notifications when errors occur
+gem 'exception_notification'
+
+# A simple wrapper to send notifications to Slack webhooks.
+gem "slack-notifier"
+
 group :development, :test do
   gem "byebug", "~> 11.0", platform: :mri
 
